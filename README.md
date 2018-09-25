@@ -31,6 +31,7 @@ send_email() {
 # Define all your recipients here.
 send_to=( email1@gmail.com email2@gmail.com email3@gmail.com )
 
+# Use FROM Email which you've verified with AWS SES.
 FROM="<FROM EMAIL ADDRESS>"
 SUBJECT="<YOUR SUBJECT HERE>"
 MESSAGE="<YOUR MESSAGE HERE>"
