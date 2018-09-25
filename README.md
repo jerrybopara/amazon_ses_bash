@@ -13,9 +13,24 @@ AWS_ACCESS_KEY="<Amazon IAM Access KEY>"
 AWS_SECRET_KEY="<Amazon IAM Secret KEY>"
 ```
 
+###### 2. Here I'am creating a function called **"Send_Email"** and added a **"for loop"** to send email to multiple recipients.
+- below i just added the syntax and you can find full script in the repo.
+
+```
+send_email() {
+
+    for i in "${send_to[@]}"
+    do  
+    
+    done
+}
+```
+
 ###### 2. Define your TO, FROM and Email SUBJECT, and MESSAGE
 ```
-TO="<EMAIL TO jerrybopara@gmail.com>"
+# Define all your recipients here.
+send_to=( email1@gmail.com email2@gmail.com email3@gmail.com )
+
 FROM="<FROM EMAIL ADDRESS>"
 SUBJECT="<YOUR SUBJECT HERE>"
 MESSAGE="<YOUR MESSAGE HERE>"
@@ -37,11 +52,21 @@ subject="Message.Subject.Data=$SUBJECT"
 message="Message.Body.Text.Data=$MESSAGE"
 ```
 
-###### 4. Final cURL Request.
+###### 4. Added **"FOR LOOP"** to send an email to multiple recipients.
 ```
-curl -v -X POST -H "Date: $date" -H "$auth_header" --data-urlencode "$message" --data-urlencode "$to" --data-urlencode "$source" --data-urlencode "$action" --data-urlencode "$subject"  "$endpoint"
+for i in "${send_to[@]}"
+do  
+    TO="$i"
+    to="Destination.ToAddresses.member.1=$TO"
+    curl -v -X POST -H "Date: $date" -H "$auth_header" --data-urlencode "$message" --data-urlencode "$to" --data-urlencode "$source" --data-urlencode "$action" --data-urlencode "$subject"  "$endpoint"  >> /dev/null 2>&1
+done
+}
 ```
 
+###### 4. Finally just call your **"send_email"** function wherever you need to send an email notifications.
+```
+send_email
+```
 
 
 
