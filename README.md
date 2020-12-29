@@ -42,7 +42,7 @@ MESSAGE="<YOUR MESSAGE HERE>"
 date="$(date -R)"
 priv_key="$AWS_SECRET_KEY"
 access_key="$AWS_ACCESS_KEY"
-signature="$(echo -n "$date" | openssl dgst -sha256 -hmac "$priv_key" -binary | base64 -w 0)"
+signature="$(echo -n "$date" | /usr/bin/openssl dgst -sha256 -hmac "$priv_key" -binary | /usr/bin/base64 -w 0)"
 auth_header="X-Amzn-Authorization: AWS3-HTTPS AWSAccessKeyId=$access_key, Algorithm=HmacSHA256, Signature=$signature"
 endpoint="https://email.us-east-1.amazonaws.com/"
 
