@@ -13,19 +13,6 @@ AWS_ACCESS_KEY="<Amazon IAM Access KEY>"
 AWS_SECRET_KEY="<Amazon IAM Secret KEY>"
 ```
 
-###### 2. Here I'am creating a function called **"Send_Email"** and added a **"for loop"** to send email to multiple recipients.
-- below i just added the syntax and you can find full script in the repo.
-
-```
-send_email() {
-
-    for i in "${send_to[@]}"
-    do  
-    
-    done
-}
-```
-
 ###### 2. Define your TO, FROM and Email SUBJECT, and MESSAGE
 ```
 # Define all your recipients here.
