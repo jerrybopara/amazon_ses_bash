@@ -51,7 +51,7 @@ done
 }
 ```
 
-###### 4. Finally just call your **"send_email"** function wherever you need to send an email notifications.
+###### **4. Finally just call your **"send_email"** function wherever you need to send an email notifications.**
 ```
 send_email
 ```
@@ -60,7 +60,7 @@ send_email
 
 
 ###### **5. If you want send email with different subjects.** 
-** Sample Use Case **
+**Sample Use Case**
 - I'm having a .txt file, which having multiple Subject lines. I want to send each email with new Subject. So i'm just demostrated it in a simple way. 
 - This is just a basic IDEA shows you that how you can make your Message's **MESSAGE=** & Subject **SUBJECT=**.
  
