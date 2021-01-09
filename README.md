@@ -1,11 +1,11 @@
 # A Simple Shell Script to send Eamils Via Amazon SES.
 
 
-###### In this script I'm using AWS SES to send emails. I'm using this script/code to send all type of my Server Alarms/Notifications.
+## In this script I'm using AWS SES to send emails. I'm using this script/code to send all type of my Server Alarms/Notifications.
 
-###### I found this way is more simple and reliable than the other ways like using default Server SMTP OR Others. 
+## I found this way is more simple and reliable than the other ways like using default Server SMTP OR Others. 
 
-###### 1. Here just you need to define AWS IAM ACESS and SECRET Keys.
+## 1. Here just you need to define AWS IAM ACESS and SECRET Keys.
 ```
 # !/bin/bash
 # AWS SES Details. 
@@ -13,7 +13,7 @@ AWS_ACCESS_KEY="<Amazon IAM Access KEY>"
 AWS_SECRET_KEY="<Amazon IAM Secret KEY>"
 ```
 
-###### 2. Define your TO, FROM and Email SUBJECT, and MESSAGE
+## 2. Define your TO, FROM and Email SUBJECT, and MESSAGE
 ```
 # Define all your recipients here.
 send_to=( email1@gmail.com email2@gmail.com email3@gmail.com )
@@ -24,7 +24,7 @@ SUBJECT="<YOUR SUBJECT HERE>"
 MESSAGE="<YOUR MESSAGE HERE>"
 ```
 
-###### 3. SES Connection and API Call using cURL. 
+## 3. SES Connection and API Call using cURL. 
 ```
 date="$(date -R)"
 priv_key="$AWS_SECRET_KEY"
@@ -40,7 +40,7 @@ subject="Message.Subject.Data=$SUBJECT"
 message="Message.Body.Text.Data=$MESSAGE"
 ```
 
-###### 4. Added **"FOR LOOP"** to send an email to multiple recipients.
+## 4. Added **"FOR LOOP"** to send an email to multiple recipients.
 ```
 for i in "${send_to[@]}"
 do  
@@ -51,7 +51,7 @@ done
 }
 ```
 
-###### **4. Finally just call your **"send_email"** function wherever you need to send an email notifications.**
+## 4. Finally just call your **send_email** function wherever you need to send an email notifications.
 ```
 send_email
 ```
