@@ -62,7 +62,7 @@ send_email
 ###### 5. If you want send email with different subjects. 
 ** Sample Use Case **
 - I'm having a .txt file, which having multiple Subject lines. I want to send each email with new Subject. So i'm just demostrated it in a simple way. 
-- This is just a basic IDEA shows you that how you can make your Message's **MESSAGE=**"<YOUR MESSAGE HERE>" & Subject **SUBJECT=**"<YOUR SUBJECT HERE>"**.
+- This is just a basic IDEA shows you that how you can make your Message's **MESSAGE=**" <YOUR MESSAGE HERE>" & Subject **SUBJECT=** "<YOUR SUBJECT HERE>".
  
 ```
 # Reading Subjects from the subject list file. 
@@ -74,4 +74,4 @@ do
 
 done
 ```
-###### NOTE: You can find full dynamic subject script in the repo, File Name:  sendemail_dynamic_subject.sh
+###### NOTE: You can find full dynamic subject script in the repo, File Name:  **sendemail_dynamic_subject.sh**
